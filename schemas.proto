@@ -30,6 +30,7 @@ message Exercise {
     string image_link = 5;
     string video_link= 6;
     map<string, string> metadata = 7;
+    string brand= 8;
 }
 
 message ExerciseSet {

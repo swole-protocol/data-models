@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+enum Equipment {
+    BARBELL = 0;
+    DUMBBELL = 1;
+    KETTLEBELL = 2;
+    CABLE = 3;
+    TREX = 4;
+    PLATE_LOADED_MACHINE = 5;
+    STANDARD_MACHINE = 6;
+    SMITH_MACHINE = 7;
+}
+
+enum MuscleGroup {
+    CHEST = 0;
+    BACK = 1;
+    TRICEPS = 2;
+    BICEPS = 3;
+    QUADRICEPS = 4;
+    HAMSTRINGS = 5;
+    SHOULDERS = 6;
+    CALVES = 7;
+}
+
+message Exercise {
+    required string name= 1;
+    required string description = 2;
+    required Equipment equipment = 3;
+    repeated MuscleGroup muscle_group = 4;
+    string image_link = 5;
+    string video_link= 6;
+    map<string, string> metadata = 7;
+}
+
+message ExerciseSet {
+    required Exercise exercise = 1;
+    required int32 target_reps = 2;
+    int32 actual_reps = 3;
+    int32 rpe = 4;
+}
+
+message ExerciseGroup {
+    repeated ExerciseSet exercise_sets = 1;
+    int32 rest_period = 2;
+}
+
+message Workout {
+    repeated ExerciseGroup exerciseGroups = 1;
+    map<string, string> metadata = 2;
+}

@@ -9,6 +9,8 @@ enum Equipment {
     PLATE_LOADED_MACHINE = 5;
     STANDARD_MACHINE = 6;
     SMITH_MACHINE = 7;
+    BODY_WEIGHT = 8;
+    SLED = 9;
 }
 
 enum MuscleGroup {
@@ -18,8 +20,11 @@ enum MuscleGroup {
     BICEPS = 3;
     QUADRICEPS = 4;
     HAMSTRINGS = 5;
-    SHOULDERS = 6;
-    CALVES = 7;
+    GLUTES = 6;
+    SHOULDERS = 7;
+    CALVES = 8;
+    TRAPEZIUS = 9;
+    ABDONIMANLS = 10;
 }
 
 message Exercise {
